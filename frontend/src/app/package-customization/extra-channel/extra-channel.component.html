@@ -1,0 +1,14 @@
+<div class="title">{{ title }}</div>
+<div class="description">{{ description }}</div>
+<img class="image"
+     [src]="image"/>
+<div class="price">
+  <app-price [value]="price"
+             [oldValue]="oldPrice"></app-price>
+</div>
+<div class="cta">
+  <button mat-button
+          color="primary"
+          (click)="selectedChange.emit(!selected)">{{ selected ? 'Wybrano' : 'Wybieram' }}
+  </button>
+</div>

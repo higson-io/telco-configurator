@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+:host {
+  flex: 1 1 auto;
+  display: flex;
+
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(12);
+  }
+}
+
+.package {
+  ::ng-deep {
+    .mat-card-actions {
+      margin-bottom: 8px;
+      position: absolute;
+      padding: 8px 0;
+      right: 24px;
+      left: 24px;
+      bottom: 0;
+    }
+    .mat-card-content {
+      margin-bottom: 48px;
+    }
+  }
+}

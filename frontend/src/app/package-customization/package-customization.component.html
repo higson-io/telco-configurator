@@ -1,0 +1,52 @@
+<hr/>
+<h2 class="math-h1">Wybierz okres</h2>
+
+<app-interval-select [intervals]="intervals$ | async"
+                     [selected]="selectedInterval$ | async"
+                     (selectedChange)="changeDuration($event)"></app-interval-select>
+
+<hr/>
+<h2 class="math-h1">Dodatkowe kanały</h2>
+
+
+<app-extra-channel *ngFor="let channel of channels$ | async; trackBy byCode"
+                   [description]="channel.description"
+                   [image]="'assets/ch-'+(channel.code)+'.png'"
+                   [price]="channel.price"
+                   [oldPrice]="channel.oldPrice"
+                   [title]="channel.title"
+                   [selected]="channel.selected"
+                   (selectedChange)="channel.selected ? removeChannel(channel.code) : addChannel(channel.code)"
+></app-extra-channel>
+
+<hr/>
+<h2 class="math-h1">Dekodery</h2>
+
+<app-hardware *ngFor="let hardware of hardwares$ | async; trackBy byCode"
+              [description]="hardware.description"
+              [image]="'assets/hw-'+(hardware.code)+'.png'"
+              [price]="hardware.price"
+              [activationPrice]="hardware.activationPrice"
+              [multiroom]="hardware.multiRoom"
+              [title]="hardware.title"
+              [selected]="hardware.selected"
+              (selectedChange)="hardware.selected ? removeHardware(hardware.code) : addHardware(hardware.code)"
+></app-hardware>
+
+<hr/>
+<h2 class="math-h1">Telefonia komórkowa</h2>
+
+<app-service *ngFor="let service of services$ | async; trackBy byCode"
+             [description]="service.description"
+             [image]="'assets/sv-'+(service.code)+'.png'"
+             [price]="service.price"
+             [oldPrice]="service.oldPrice"
+             [activationPrice]="service.activationPrice"
+             [oldActivationPrice]="service.oldActivationPrice"
+             [title]="service.title"
+             [selected]="service.selected"
+             (selectedChange)="service.selected ? removeService(service.code) : addService(service.code)"
+></app-service>
+
+<app-summary [data]="summary$ | async"
+             (order)="makeOrder()"></app-summary>

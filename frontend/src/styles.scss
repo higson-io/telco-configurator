@@ -1,0 +1,70 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+@import './app/package-selection/package-selection.component';
+@import './app/package-customization/extra-channel/extra-channel.component';
+@import './app/package-customization/hardware/hardware.component';
+@import './app/package-customization/service/service.component';
+@import './app/package-customization/summary/summary.component';
+@import './app/shared/price/price.component';
+@import './styles';
+
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Lato, Roboto, sans-serif'
+  //$headline: mat-typography-level(32px, 48px, 700),
+  //$body-1: mat-typography-level(16px, 24px, 500)
+);
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$demo-ncp-primary: mat-palette($mat-deep-orange);
+$demo-ncp-accent: mat-palette($mat-blue-grey, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$demo-ncp-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$demo-ncp-theme: mat-light-theme($demo-ncp-primary, $demo-ncp-accent, $demo-ncp-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($demo-ncp-theme);
+@include package-selection-theme($demo-ncp-theme);
+@include price-theme($demo-ncp-theme);
+@include extra-channel-theme($demo-ncp-theme);
+@include hardware-theme($demo-ncp-theme);
+@include service-theme($demo-ncp-theme);
+@include root-theme($demo-ncp-theme);
+@include summary-theme($demo-ncp-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body, .mat-stepper-horizontal {
+  background: mat-color(map-get($demo-ncp-theme, background), background);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button {
+  text-transform: uppercase;
+}
+

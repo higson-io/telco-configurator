@@ -1,0 +1,16 @@
+@mixin summary-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-summary {
+    .mat-card {
+      background: mat-color($background, status-bar);
+    }
+
+    th, td {
+      &.separator {
+        border-left-color: map-get($foreground, divider);
+      }
+    }
+  }
+}

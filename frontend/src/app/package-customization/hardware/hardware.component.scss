@@ -1,0 +1,77 @@
+@import '~@angular/material/theming';
+
+:host {
+  display: grid;
+  grid-template-columns: 20px 120px 20px 1fr 20px 200px 20px;
+  grid-template-rows: 20px 28px 1fr 28px 20px;
+  grid-template-areas: ". . . . . . ." ". image . title . price ." ". image . description . price ." ". image . description . cta ." ". . . . . . .";
+
+  border: 2px solid transparent;
+  border-radius: 4px;
+
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(12);
+  }
+
+  &.selected {
+    @include mat-elevation(0);
+
+    &:hover {
+      @include mat-elevation(0);
+    }
+  }
+}
+
+
+.image {
+  grid-area: image;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}
+
+.title {
+  grid-area: title;
+}
+
+.description {
+  grid-area: description;
+}
+
+.cta {
+  grid-area: cta;
+  text-align: right
+}
+
+.price {
+  grid-area: price;
+
+  tr {
+    height: 30px;
+  }
+  th {
+    font-weight: normal;
+    text-align: left;
+  }
+
+  td {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.title, .description {
+  padding-right: 20px;
+  border-right: 1px solid transparent;
+}
+
+table {
+  width: 100%;
+}

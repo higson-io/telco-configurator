@@ -1,0 +1,33 @@
+<mat-card class="mat-elevation-z3">
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>Pakiet</th>
+        <th class="separator">Okres</th>
+        <th class="separator">Opłata miesięczna</th>
+        <th class="separator">Opłata jednorazowa</th>
+        <td rowspan="2">
+          <button mat-button
+                  mat-raised-button
+                  color="primary"
+                  (click)="order.emit()">Zamów
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ data?.package }}</td>
+        <td class="separator oneline">{{ data?.interval }}</td>
+        <td class="separator">
+          <app-price class="inline"
+                     [oldValue]="data?.oldPrice"
+                     [value]="data?.price"></app-price>
+        </td>
+        <td class="separator">
+          <app-price class="inline"
+                     [oldValue]="data?.oldActivationPrice"
+                     [value]="data?.activationPrice"></app-price>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

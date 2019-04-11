@@ -1,0 +1,50 @@
+<mat-toolbar color="accent">
+  <mat-toolbar-row>
+    <a href="/telco-configurator"
+       mat-button>
+      <span>Telco</span>
+    </a>
+    <span class="spacer"></span>
+    <span>Kup pakiet</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-horizontal-stepper #stepper
+                        labelPosition="bottom"
+                        [class.loading]="loading$ | async"
+                        [linear]="true"
+                        [selectedIndex]="step$ | async"
+>
+  <mat-step state="done"
+            [editable]="false"
+            [completed]="false">
+    <div *matStepLabel>Wybierz pakiet</div>
+    <app-package-selection></app-package-selection>
+  </mat-step>
+  <mat-step state="done"
+            [editable]="false"
+            [completed]="false">
+    <div *matStepLabel>Skonfiguruj pakiet</div>
+    <app-package-customization></app-package-customization>
+  </mat-step>
+  <mat-step state="done"
+            [editable]="false"
+            [completed]="false">
+    <div *matStepLabel>Potwierdzenie</div>
+    <app-package-summary></app-package-summary>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<footer class="mat-body-2">
+  <span>Demo in <a href="https://hyperon.io">Hyperon</a> provided by <a href="https://www.decerto.pl">Decerto</a></span>
+  <span class="spacer"></span>
+  <span>All rights reserved  | 2019</span>
+</footer>
+
+<section class="demo">
+  <input [matDatepicker]="picker"
+         (dateChange)="updateVersion($event.value)"
+         class="cdk-visually-hidden">
+  <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</section>

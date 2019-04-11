@@ -1,0 +1,17 @@
+@mixin service-theme($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-service {
+    background: mat-color($background, card);
+
+    &.selected {
+      border-color: mat-color($primary);
+    }
+
+    .title.title, .description.description {
+      border-right-color: map-get($foreground, divider);
+    }
+  }
+}

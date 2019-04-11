@@ -1,0 +1,27 @@
+@mixin price-theme($theme) {
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+
+  app-price {
+
+    .old-value {
+      .currency,
+      .coma,
+      .per,
+      .type,
+      .major,
+      .minor {
+        &::before {
+
+          background: mat-color($warn, A400);
+        }
+      }
+    }
+
+    &.inline {
+      .old-value {
+        color: transparentize(mat-color($foreground, text), 0.5);
+      }
+    }
+  }
+}

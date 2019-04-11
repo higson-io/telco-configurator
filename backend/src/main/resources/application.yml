@@ -1,0 +1,18 @@
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+hyperon:
+  database:
+    url: jdbc:h2:C:/path/to/bundle/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
+    username: sa
+    password: sa
+    dialect: h2
+  dev:
+    mode: true
+    user: admin
+  profile: TELCO
+
+server:
+  servlet:
+    context-path: /telco-configurator

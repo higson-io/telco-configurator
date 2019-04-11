@@ -1,0 +1,9 @@
+<div class="old-value"
+     [class.hide]="(majorValue === majorOldValue) && (minorValue === minorOldValue)">
+  <span class="major">{{ majorOldValue }}</span><span class="coma">,</span><span class="minor">{{ minorOldValue }}</span>
+  <span class="currency">{{ currency }}</span><span class="per">/</span><span class="type">{{ type }}</span>
+</div>
+<div class="value">
+  <span class="major">{{ majorValue }}</span><span class="coma">,</span><span class="minor">{{ minorValue }}</span>
+  <span class="currency">{{ currency }}</span><span class="per">/</span><span class="type">{{ type }}</span>
+</div>

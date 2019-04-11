@@ -1,0 +1,8 @@
+<mat-radio-group [value]="selected"
+                 (change)="selectedChange.emit($event.value)">
+  <mat-radio-button *ngFor="let interval of intervals"
+                    color="primary"
+                    [value]="interval.value">
+    {{ interval?.value }} {{ interval?.displayUnitValue }}
+  </mat-radio-button>
+</mat-radio-group>

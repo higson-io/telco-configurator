@@ -1,0 +1,11 @@
+@mixin root-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  hr {
+    border-top-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    border: 1px solid map-get($foreground, divider);
+  }
+}
+

@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.spinner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 50px;
+
+  opacity: 0;
+
+  &.loading {
+    opacity: 1;
+  }
+
+  &:not(.loading){
+    pointer-events: none;
+  }
+
+  transition: linear opacity 300ms;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+app-package {
+  max-width: calc(50% - 20px);
+  flex: 1 1 auto;
+}
+

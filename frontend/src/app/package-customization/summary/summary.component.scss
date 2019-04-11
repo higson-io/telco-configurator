@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+mat-card {
+  border-radius: 0;
+
+  table {
+    width: 100%;
+    font-size: 16px;
+    border-collapse: collapse;
+  }
+}
+
+tr {
+  height: 32px;
+}
+th {
+  font-weight: normal;
+}
+
+td {
+  font-weight: bold;
+}
+
+th,td {
+  padding: 8px 32px;
+  text-align: left;
+
+  &.separator {
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+}
+
+
+button {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.oneline {
+  white-space: nowrap;
+}

@@ -1,0 +1,13 @@
+<section class="list">
+  <app-package *ngFor="let packageItem of packages$ | async"
+               [data]="packageItem"
+               [image]="'assets/pk-'+(packageItem.code)+'.jpg'"
+               (select)="newOffer($event.code)"></app-package>
+</section>
+
+<span class="spacer"></span>
+
+<div class="spinner"
+     [class.loading]="isLoading$ | async">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>

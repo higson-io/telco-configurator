@@ -1,0 +1,23 @@
+<mat-card class="package">
+  <mat-card-header>
+    <mat-card-title>{{ data?.publicName }}</mat-card-title>
+    <mat-card-subtitle>{{ data?.channelsSum}} kanałów</mat-card-subtitle>
+    <span class="spacer"> </span>
+    <app-price [value]="data?.promos && data.promos[data.promos.length - 1]?.price"
+               [oldValue]="data?.monthlyPrice"></app-price>
+  </mat-card-header>
+  <img mat-card-image
+       [src]="image"/>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let detail of (data?.details || [])">{{ detail }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button color="primary"
+            mat-button
+            (click)="select.emit({code: data?.code})"
+    >Wybieram
+    </button>
+  </mat-card-actions>
+</mat-card>

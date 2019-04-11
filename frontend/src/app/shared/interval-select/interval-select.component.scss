@@ -1,0 +1,9 @@
+mat-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}

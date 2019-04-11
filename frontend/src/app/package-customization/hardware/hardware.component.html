@@ -1,0 +1,26 @@
+<div class="title">{{ title }}</div>
+<div class="description">{{ description }}</div>
+<img class="image"
+     [src]="image"/>
+<div class="price">
+  <table>
+    <tr>
+      <th>Opłata mies.</th>
+      <td><app-price class="inline" [value]="price"></app-price></td>
+    </tr>
+    <tr>
+      <th>Aktywacja</th>
+      <td><app-price class="inline" [value]="activationPrice"></app-price></td>
+    </tr>
+    <tr>
+      <th>Multiroom</th>
+      <td>{{ multiroom ? 'TAK' : 'NIE' }}</td>
+    </tr>
+  </table>
+</div>
+<div class="cta">
+  <button mat-button
+          color="primary"
+          (click)="selectedChange.emit(!selected)">{{ selected ? 'Wybrano' : 'Wybieram' }}
+  </button>
+</div>

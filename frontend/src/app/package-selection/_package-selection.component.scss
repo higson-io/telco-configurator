@@ -1,0 +1,10 @@
+@mixin package-selection-theme($theme) {
+  $background: map-get($theme, background);
+
+  app-package-selection {
+
+    .loading {
+      background: transparentize(mat-color($background, card), .3);
+    }
+  }
+}
