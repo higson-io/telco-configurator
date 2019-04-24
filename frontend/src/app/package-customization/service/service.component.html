@@ -5,11 +5,11 @@
 <div class="price">
   <table>
     <tr>
-      <th>Opłata mies.</th>
+      <th>Monthly payment</th>
       <td><app-price class="inline" [value]="price" [oldValue]="oldPrice"></app-price></td>
     </tr>
     <tr>
-      <th>Aktywacja</th>
+      <th>Activation</th>
       <td><app-price class="inline" [value]="activationPrice" [oldValue]="oldActivationPrice"></app-price></td>
     </tr>
   </table>
@@ -17,6 +17,6 @@
 <div class="cta">
   <button mat-button
           color="primary"
-          (click)="selectedChange.emit(!selected)">{{ selected ? 'Wybrano' : 'Wybieram' }}
+          (click)="selectedChange.emit(!selected)">{{ selected ? 'Selected' : 'Select' }}
   </button>
 </div>

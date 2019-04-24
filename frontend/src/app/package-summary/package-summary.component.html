@@ -8,18 +8,18 @@
   </g>
 </svg>
 
-<p class="mat-display-1">Dziękujemy za złożenie zamówienia!</p>
+<p class="mat-display-1">Thank you for your order!</p>
 
 </figure>
 
 <ng-container *ngIf="hasData$ | async">
-  <h2 class="math-h1">Terminarz płatności</h2>
+  <h2 class="math-h1">Payment schedule</h2>
 
   <table>
     <tr class="mat-body-2">
-      <th class="col-no">Lp.</th>
-      <th class="col-price">Kwota</th>
-      <th class="col-date">Data wymagalności</th>
+      <th class="col-no">No.</th>
+      <th class="col-price">Amount</th>
+      <th class="col-date">Payment Date</th>
     </tr>
     <tr *ngFor="let row of dataSource$ | async; trackBy: byNo"
         class="mat-body-1">

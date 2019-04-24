@@ -1,7 +1,7 @@
 <mat-card class="package">
   <mat-card-header>
     <mat-card-title>{{ data?.publicName }}</mat-card-title>
-    <mat-card-subtitle>{{ data?.channelsSum}} kanałów</mat-card-subtitle>
+    <mat-card-subtitle>{{ data?.channelsSum}} channels</mat-card-subtitle>
     <span class="spacer"> </span>
     <app-price [value]="data?.promos && data.promos[data.promos.length - 1]?.price"
                [oldValue]="data?.monthlyPrice"></app-price>
@@ -17,7 +17,7 @@
     <button color="primary"
             mat-button
             (click)="select.emit({code: data?.code})"
-    >Wybieram
+    >Select
     </button>
   </mat-card-actions>
 </mat-card>

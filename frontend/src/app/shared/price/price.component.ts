@@ -10,7 +10,7 @@ export class PriceComponent {
   @Input() value: number;
   @Input() oldValue: number;
   @Input() currency = 'zł';
-  @Input() type = 'mies';
+  @Input() type = 'mth';
   @Input() places = 2;
 
   get minorValue() {

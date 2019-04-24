@@ -5,7 +5,7 @@
       <span>Telco</span>
     </a>
     <span class="spacer"></span>
-    <span>Kup pakiet</span>
+    <span>Buy package</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -18,19 +18,19 @@
   <mat-step state="done"
             [editable]="false"
             [completed]="false">
-    <div *matStepLabel>Wybierz pakiet</div>
+    <div *matStepLabel>Choose package</div>
     <app-package-selection></app-package-selection>
   </mat-step>
   <mat-step state="done"
             [editable]="false"
             [completed]="false">
-    <div *matStepLabel>Skonfiguruj pakiet</div>
+    <div *matStepLabel>Configure package</div>
     <app-package-customization></app-package-customization>
   </mat-step>
   <mat-step state="done"
             [editable]="false"
             [completed]="false">
-    <div *matStepLabel>Potwierdzenie</div>
+    <div *matStepLabel>Summary</div>
     <app-package-summary></app-package-summary>
   </mat-step>
 </mat-horizontal-stepper>
