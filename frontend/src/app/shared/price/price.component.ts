@@ -9,7 +9,7 @@ export class PriceComponent {
 
   @Input() value: number;
   @Input() oldValue: number;
-  @Input() currency = 'zł';
+  @Input() currency = 'pln';
   @Input() type = 'mth';
   @Input() places = 2;
 
