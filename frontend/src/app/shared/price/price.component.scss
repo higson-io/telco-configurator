@@ -85,7 +85,7 @@
       }
 
       .minor, .currency {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
         font-style: italic;
         text-align: center;
@@ -125,12 +125,15 @@
 
   &.inline {
     white-space: nowrap;
-
+    font-size: 14px;
     .currency {
       margin-left: 1px;
     }
     .value{
       display: inline-block;
+      .currency {
+        margin-left: 2px;
+      }
     }
     .old-value {
       display: inline-block;
