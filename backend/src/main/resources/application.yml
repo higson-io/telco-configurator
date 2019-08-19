@@ -16,3 +16,4 @@ hyperon:
 server:
   servlet:
     context-path: /telco-configurator
+  port: 8080
