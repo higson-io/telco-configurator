@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>pl.decerto</groupId>
 			<artifactId>hyperon-runtime</artifactId>
-			<version>1.6.49</version>
+			<version>1.8.5</version>
 		</dependency>
 
 		<!-- Database access libraries -->
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.196</version>
+			<version>1.4.199</version>
 		</dependency>
 		<!-- Collections support-->
 		<dependency>
