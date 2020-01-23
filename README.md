@@ -2,7 +2,7 @@
 
 This is a sample configuration application to demonstrate capabilities of Hyperon.io library. 
 
-Hyperon.io tutorials are availble [here](https://hyperon.io/tutorials/getting-started).
+Hyperon.io tutorials are available [here](https://www.hyperon.io/docs/tutorials).
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Previous Maven versions might work as well but this was not checked.
 
 https://hyperon.io/download
  
-2. download bundle, unpack it to the directory of your choice and run it as described [here](http://hyperon.io/tutorials/deploying-hyperon-studio). 
+2. download bundle, unpack it to the directory of your choice and run it as described [here](https://www.hyperon.io/docs/download). 
 
 ## Setup
 
