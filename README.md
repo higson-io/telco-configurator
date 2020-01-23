@@ -24,7 +24,7 @@ Previous Maven versions might work as well but this was not checked.
 
 https://www.hyperon.io/docs/download
  
-2. download bundle, unpack it to the directory of your choice and run it as described [here](https://www.hyperon.io/docs/download). 
+2. download bundle, unpack it to the directory of your choice and run it as described [here](https://www.hyperon.io/tutorial/installing-hyperon-studio). 
 
 ## Setup
 
