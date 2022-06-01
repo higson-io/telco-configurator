@@ -4,27 +4,39 @@ services:
     container_name: db
     image: hyperonio/bundle-h2-demo:latest
     ports:
-      - 8082:8082
-      - 9092:9092
+      - "8082:8082"
+      - "9092:9092"
+    networks:
+      - hyperon-net
+
   studio:
     container_name: studio
-    image: hyperonio/studio:latest
+    image: hyperonio/studio:2.1.4
     environment:
-      - mpp.database.url=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
-      - mpp.database.dialect=h2
-      - mpp.database.username=sa
-      - mpp.database.password=sa
-      - hyperon.studio.setup.password-force-change.enabled=false
+      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
+      - HYPERON_DATABASE_DIALECT=h2
+      - HYPERON_DATABASE_USERNAME=sa
+      - HYPERON_DATABASE_PASSWORD=sa
+      - HYPERON_STUDIO_SETUP_PASSWORD-FORCE-CHANGE_ENABLED=false
     ports:
-      - 38080:8080
+      - "38080:8080"
     depends_on:
       - db
+    networks:
+      - hyperon-net
+
   web:
     container_name: demo
-    image: hyperonio/telco-configurator-demo:latest
+    image: hyperonio/telco-configurator:latest
     environment:
       - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
     ports:
-      - 48080:8080
+      - "48080:8080"
     depends_on:
       - db
+    networks:
+      - hyperon-net
+
+networks:
+  hyperon-net:
+    driver: bridge

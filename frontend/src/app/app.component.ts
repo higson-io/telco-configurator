@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {OfferStoreSelectors, RootStoreSelectors, RootStoreState, DemoStoreActions} from './root-store';
 import {Store} from '@ngrx/store';
 import {tap} from 'rxjs/operators';
-import {MatHorizontalStepper} from '@angular/material';
+import { MatHorizontalStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +27,8 @@ export class AppComponent {
   }
 
   private switchStep(step) {
-    if (!this.stepper.steps) {
+    console.log(this.stepper);
+    if (!this.stepper?.steps) {
       return;
     }
 

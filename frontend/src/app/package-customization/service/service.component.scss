@@ -1,13 +1,9 @@
 @import '~@angular/material/theming';
 
 :host {
-  display: grid;
-  grid-template-columns: 20px 120px 20px 1fr 20px 200px 20px;
-  grid-template-rows: 20px 28px 1fr 28px 20px;
-  grid-template-areas: ". . . . . . ." ". image . title . price ." ". image . description . price ." ". image . description . cta ." ". . . . . . .";
-
   border: 2px solid transparent;
   border-radius: 4px;
+  display: block;
 
   @include mat-elevation(2);
 
@@ -22,6 +18,13 @@
       @include mat-elevation(0);
     }
   }
+}
+
+section {
+  display: grid;
+  grid-template-columns: 20px 120px 20px 1fr 20px 200px 20px;
+  grid-template-rows: 20px 28px 1fr 28px 20px;
+  grid-template-areas: ". . . . . . ." ". image . title . price ." ". image . description . price ." ". image . description . cta ." ". . . . . . .";
 }
 
 

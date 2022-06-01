@@ -12,8 +12,7 @@ export class ExtraChannelComponent {
   @Input() description: string;
   @Input() price: number;
   @Input() oldPrice: number;
-  @HostBinding('class.selected')
-  @Input() selected: boolean;
+  @HostBinding('class.selected') @Input() selected: boolean;
 
   @Output() selectedChange = new EventEmitter<boolean>();
 

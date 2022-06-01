@@ -4,9 +4,10 @@ import {PackageCustomizationComponent} from './package-customization.component';
 import {HardwareComponent} from './hardware/hardware.component';
 import {ExtraChannelComponent} from './extra-channel/extra-channel.component';
 import {SharedModule} from '../shared';
-import {MatButtonModule, MatCardModule} from '@angular/material';
 import {SummaryComponent} from './summary/summary.component';
 import {ServiceComponent} from './service/service.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [PackageCustomizationComponent, HardwareComponent, ExtraChannelComponent, ServiceComponent, SummaryComponent],

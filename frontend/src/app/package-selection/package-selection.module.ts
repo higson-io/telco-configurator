@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PackageSelectionComponent} from './package-selection.component';
 import {PackageComponent} from './package/package.component';
-import {MatButtonModule, MatCardModule, MatProgressSpinnerModule} from '@angular/material';
 import {SharedModule} from '../shared';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [

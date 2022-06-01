@@ -1,9 +1,12 @@
-import {Inject} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {OfferDataModel} from '../../models';
 import {apiUrlToken} from '../api';
 import {OfferDataService} from './offer.data-service';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class OfferDataServiceImpl implements OfferDataService {
 
   constructor(private http: HttpClient,

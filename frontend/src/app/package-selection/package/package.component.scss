@@ -12,6 +12,8 @@
 }
 
 .package {
+  cursor: pointer;
+
   ::ng-deep {
     .mat-card-actions {
       margin-bottom: 8px;

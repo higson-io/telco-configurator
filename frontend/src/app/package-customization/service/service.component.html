@@ -1,22 +1,31 @@
-<div class="title">{{ title }}</div>
-<div class="description">{{ description }}</div>
-<img class="image"
-     [src]="image"/>
-<div class="price">
-  <table>
-    <tr>
-      <th>Monthly payment</th>
-      <td><app-price class="inline" [value]="price" [oldValue]="oldPrice"></app-price></td>
-    </tr>
-    <tr>
-      <th>Activation</th>
-      <td><app-price class="inline" [value]="activationPrice" [oldValue]="oldActivationPrice"></app-price></td>
-    </tr>
-  </table>
-</div>
-<div class="cta">
-  <button mat-button
-          color="primary"
-          (click)="selectedChange.emit(!selected)">{{ selected ? 'Selected' : 'Select' }}
-  </button>
-</div>
+<section (click)="selectedChange.emit(!selected)">
+    <div class="title">{{ title }}</div>
+    <div class="description">{{ description }}</div>
+    <img class="image"
+         [src]="image"/>
+    <div class="price">
+        <table>
+            <tr>
+                <th>Monthly payment</th>
+                <td>
+                    <app-price class="inline"
+                               [value]="price"
+                               [oldValue]="oldPrice"></app-price>
+                </td>
+            </tr>
+            <tr>
+                <th>Activation</th>
+                <td>
+                    <app-price class="inline"
+                               [value]="activationPrice"
+                               [oldValue]="oldActivationPrice"></app-price>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="cta">
+        <button mat-button
+                color="primary">{{ selected ? 'Selected' : 'Select' }}
+        </button>
+    </div>
+</section>

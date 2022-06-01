@@ -1,8 +1,11 @@
-import {Inject} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {apiUrlToken} from '../api';
 import {DemoDataService} from './demo.data-service';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class DemoDataServiceImpl implements DemoDataService {
 
   constructor(private http: HttpClient,

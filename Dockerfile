@@ -1,6 +1,5 @@
-FROM openjdk:11-jdk
-MAINTAINER Maciej Główka <maciej.glowka@decerto.pl>
-MAINTAINER Artur Osiak <artur.osiak@decerto.pl>
+FROM openjdk:11-slim
+MAINTAINER Marcin Michalak <marcin.michalak@decerto.com>
 
 COPY ./backend/target/telco-configurator.war /app/telco-configurator.war
 COPY ./docker/app.yml /root/conf/hyperon-demo-app.yml
