@@ -27,7 +27,7 @@ services:
 
   web:
     container_name: demo
-    image: hyperonio/telco-configurator:latest
+    image: hyperonio/telco-configurator-demo:latest
     environment:
       - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
     ports:
