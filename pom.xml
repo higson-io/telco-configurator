@@ -19,7 +19,7 @@
 		<connection>scm:git:${project.git.url}</connection>
 		<developerConnection>scm:git:${project.git.url}</developerConnection>
 		<url>scm:git:${project.git.url}</url>
-		<tag>telco-configurator-1.3.33</tag>
+		<tag>telco-configurator-1.3.3</tag>
 	</scm>
 
 	<properties>
