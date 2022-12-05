@@ -16,11 +16,12 @@ Make sure that `mvn` command is accessible through system path. If not, add them
 
 In file `backend/src/main/resources/application.yml` set `hyperon.database.url` to point Hyperon Studio H2 database file, e.g.:
 ```properties
-hyperon.database.url=jdbc:h2:/your-database-dir/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
+hyperon.database.url=jdbc:h2:/your-database-dir/hyperon.demo
 ```
 You can use an attached database in [database](./database) directory
 ## Running
-There are couple ways to run this demo.
+There are couple ways to run this demo. 
+
 #### 1.Create and deploy war file
 You need tomcat server (9.x, can be downloaded [here](https://tomcat.apache.org/download-90.cgi)). Download and extract it 
 anywhere. Go back to this demo, execute below maven command:
@@ -70,16 +71,19 @@ docker run -p 48080:8080
     -e hyperon.studio.instance-name=hyperon_docker \
     telco-configurator-demo
 ```
-OR application can be run with bundle-h2-demo and hyperon-studio images using docker-compose based on [docker-compose.yml](./docker-compose.
-yml). Simply run:
+
+#### 4.Run with Docker compose 
+Application can be run with bundle-h2-demo and hyperon-studio images using docker-compose based on [docker-compose.yml](./docker-compose.
+yml)
 ```shell
-docker-compose up   
-# or (regarding to docker version)
+mvn clean install #prepares application war used in provided Dockerfile
+
+docker-compose up
+#or (regarding to docker version) 
 docker compose up
 ```
-
-* By default Hyperon Studio will be available at: [host]:38080/hyperon/app
-* By default Demo application will be available at: [host]:48080/telco-configurator
+* By default, Hyperon Studio will be available at: [host]:38080/hyperon/app
+* By default, Demo application will be available at: [host]:48080/telco-configurator
  
 ## Studio Configuration
 To configure business elements used in this demo just run downloaded bundle from ```hyperon.io```. All business data is located under TELCO profile.

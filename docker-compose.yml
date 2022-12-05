@@ -2,7 +2,7 @@ version: "3.7"
 services:
   db:
     container_name: db
-    image: hyperonio/bundle-h2-demo:latest
+    image: hyperonio/bundle-h2-demo:2.0.2
     ports:
       - "8082:8082"
       - "9092:9092"
@@ -11,9 +11,9 @@ services:
 
   studio:
     container_name: studio
-    image: hyperonio/studio:2.1.4
+    image: hyperonio/studio:2.2.2
     environment:
-      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
+      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo
       - HYPERON_DATABASE_DIALECT=h2
       - HYPERON_DATABASE_USERNAME=sa
       - HYPERON_DATABASE_PASSWORD=sa
@@ -27,9 +27,9 @@ services:
 
   web:
     container_name: demo
-    image: hyperonio/telco-configurator-demo:latest
+    build: .
     environment:
-      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;AUTO_SERVER=TRUE;MVCC=TRUE;IFEXISTS=TRUE
+      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo
     ports:
       - "48080:8080"
     depends_on:
