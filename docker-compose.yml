@@ -2,7 +2,7 @@ version: "3.7"
 services:
   db:
     container_name: db
-    image: hyperonio/bundle-h2-demo:2.0.2
+    image: hyperonio/bundle-h2-demo:2.0.4
     ports:
       - "8082:8082"
       - "9092:9092"
@@ -11,15 +11,15 @@ services:
 
   studio:
     container_name: studio
-    image: hyperonio/studio:2.2.2
+    image: decerto/higson-studio:4.0.1
     environment:
-      - HYPERON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo
-      - HYPERON_DATABASE_DIALECT=h2
-      - HYPERON_DATABASE_USERNAME=sa
-      - HYPERON_DATABASE_PASSWORD=sa
-      - HYPERON_STUDIO_SETUP_PASSWORD-FORCE-CHANGE_ENABLED=false
+      - HIGSON_DATABASE_URL=jdbc:h2:tcp://db/hyperon.demo;NON_KEYWORDS=VALUE
+      - HIGSON_DATABASE_DIALECT=h2
+      - HIGSON_DATABASE_USERNAME=sa
+      - HIGSON_DATABASE_PASSWORD=sa
+      - HIGSON_STUDIO_SETUP_PASSWORD_FORCE_CHANGE_ENABLED=false
     ports:
-      - "38080:8080"
+      - "38080:38080"
     depends_on:
       - db
     networks:

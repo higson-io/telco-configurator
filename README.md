@@ -8,7 +8,7 @@ Make sure you have at least:
 - Maven 
 To install go to: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 Previous Maven versions might work as well but this was not checked. 
-- Hyperon Studio 2.1.4  
+- Higson Studio 4.0.1  
   - Go to: [https://www.hyperon.io/docs/download](https://www.hyperon.io/docs/download)
   - download bundle, unpack it to the directory of your choice and run it as described [here](https://www.hyperon.io/tutorial/installing-hyperon-studio). 
 ## Setup
@@ -82,7 +82,7 @@ docker-compose up
 #or (regarding to docker version) 
 docker compose up
 ```
-* By default, Hyperon Studio will be available at: [host]:38080/hyperon/app
+* By default, Higson Studio will be available at: [host]:38080/higson/app
 * By default, Demo application will be available at: [host]:48080/telco-configurator
  
 ## Studio Configuration
