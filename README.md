@@ -1,6 +1,6 @@
-# Hyperon Telco-Configurator Demo App
-This is a sample configuration application to demonstrate capabilities of Hyperon.io library. 
-Hyperon.io tutorials are available [here](https://www.hyperon.io/docs/tutorials).
+# Higson Telco-Configurator Demo App
+This is a sample configuration application to demonstrate capabilities of Higson.io library. 
+Higson.io tutorials are available [here](https://www.higson.io/docs/start-documentation).
 
 ## Prerequisites
 Make sure you have at least:
@@ -9,14 +9,14 @@ Make sure you have at least:
 To install go to: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 Previous Maven versions might work as well but this was not checked. 
 - Higson Studio 4.0.1  
-  - Go to: [https://www.hyperon.io/docs/download](https://www.hyperon.io/docs/download)
-  - download bundle, unpack it to the directory of your choice and run it as described [here](https://www.hyperon.io/tutorial/installing-hyperon-studio). 
+  - Go to: [https://www.higson.io/docs/download](https://www.higson.io/docs/download)
+  - download bundle, unpack it to the directory of your choice and run it as described [here](https://www.higson.io/docs/start-documentation). 
 ## Setup
 Make sure that `mvn` command is accessible through system path. If not, add them.
 
-In file `backend/src/main/resources/application.yml` set `hyperon.database.url` to point Hyperon Studio H2 database file, e.g.:
+In file `backend/src/main/resources/application.yml` set `hyperon.database.url` to point Higson Studio H2 database file, e.g.:
 ```properties
-hyperon.database.url=jdbc:h2:/your-database-dir/hyperon.demo
+hyperon.database.url=jdbc:h2:/your-database-dir/higson.demo
 ```
 You can use an attached database in [database](./database) directory
 ## Running
@@ -68,12 +68,12 @@ docker run -p 48080:8080
     -e hyperon.database.dialect=<choose> \
     -e hyperon.database.username=<db_username> \
     -e hyperon.database.password=<db_password> \
-    -e hyperon.studio.instance-name=hyperon_docker \
+    -e hyperon.studio.instance-name=higson_docker \
     telco-configurator-demo
 ```
 
 #### 4.Run with Docker compose 
-Application can be run with bundle-h2-demo and hyperon-studio images using docker-compose based on [docker-compose.yml](./docker-compose.
+Application can be run with bundle-h2-demo and higson-studio images using docker-compose based on [docker-compose.yml](./docker-compose.
 yml)
 ```shell
 mvn clean install #prepares application war used in provided Dockerfile
@@ -86,4 +86,4 @@ docker compose up
 * By default, Demo application will be available at: [host]:48080/telco-configurator
  
 ## Studio Configuration
-To configure business elements used in this demo just run downloaded bundle from ```hyperon.io```. All business data is located under TELCO profile.
+To configure business elements used in this demo just run downloaded bundle from ```higson.io```. All business data is located under TELCO profile.
